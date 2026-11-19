@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Scroll through the non-negative integers.">
+  <title>Every Number Dot Com</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Every Number Dot Com</h1>
+    <div class="header-links">
+      <button id="favorites" type="button" aria-pressed="false" aria-controls="rows">Favorites</button>
+      <a href="https://everyuuid.com/">Inspired by Every UUID</a>
+    </div>
+  </header>
+  <div id="explorer">
+    <div id="horizontal-scroll">
+      <main id="numbers" tabindex="0" aria-label="Non-negative integers">
+        <div id="track">
+          <ol id="rows" role="list" aria-label="Visible integers"></ol>
+        </div>
+        <p id="empty" hidden>No favorites yet.</p>
+        <noscript>Enable JavaScript to scroll through the numbers.</noscript>
+      </main>
+    </div>
+    <input id="scroll-position" type="range" min="0" max="32000" value="0"
+           aria-label="Jump to index" aria-valuetext="0" aria-controls="numbers">
+  </div>
+  <div id="status" role="status"></div>
+  <template id="number-item">
+    <li>
+      <span class="row-index"><span class="index-padding" aria-hidden="true"></span><span class="index-value"></span></span>
+      <button class="copy" type="button" title="Copy number">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="8" y="8" width="12" height="12" rx="2"/>
+          <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>
+        </svg>
+      </button>
+      <button class="favorite" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"/>
+        </svg>
+      </button>
+      <span class="number"></span>
+    </li>
+  </template>
+</body>
+</html>

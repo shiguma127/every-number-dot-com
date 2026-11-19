@@ -1,0 +1,8 @@
+node_modules/
+.reference/
+.tools/
+test-results/
+playwright-report/
+.env
+.env.*
+.dev.vars
